@@ -28,6 +28,11 @@ $colors: (
     margin-bottom: $i + rem;
   }
 
+  .mt--#{$i} {
+    margin-top: $i + rem;
+  }
+
+
   .gap--#{$i} {
     gap: #{$i} + rem;
   }

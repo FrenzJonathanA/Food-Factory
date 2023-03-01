@@ -9,13 +9,6 @@
 
 
 
-@mixin grid($cols: 1fr 1fr) {
-  display: grid;
-  grid-template-columns: $cols;
-  grid-gap: 1rem;
-}
-
-
 @mixin mediaQuery($width) {
   @media screen and (max-width: $width) {
     @content;
@@ -53,6 +46,11 @@
   grid-gap: ($gap);
 }
 
+@mixin gridUneven($cols, $gap) {
+  display: grid;
+  grid-template-columns: $cols;
+  grid-gap: ($gap);
+}
 
 @mixin imgFit($width: 1px, $height: 1px) {
   width: $width;
@@ -66,4 +64,10 @@
   position: absolute;
   left: $left;
   top: $top; 
+}
+
+@mixin centerBetween{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
