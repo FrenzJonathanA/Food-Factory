@@ -8,6 +8,11 @@ body {
   font-size: 1.6rem;
   line-height: 1.4;
   color: $clr-dark;
+  transition: .5s ease;
+}
+
+body.show {
+  transform: translate(-350px);
 }
 
 a {

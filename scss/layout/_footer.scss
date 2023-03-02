@@ -6,7 +6,10 @@
         color: $clr-light;
     }
     &__wrapper{
-        @include grid(1.3fr 1fr 1fr 1fr, 2rem);
+        // @include grid(1.3fr 1fr 1fr 1fr, 2rem);
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1fr;
+        grid-gap: 1rem;
         @include mediaQuery($mobile) {
             @include grid(1, 2rem)
         }  

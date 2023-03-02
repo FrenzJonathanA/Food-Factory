@@ -6,8 +6,10 @@
 @import "06-utilities";
 
 @import "./components/btn";
+
 @import "./layout/header";
 @import "./layout/footer";
+@import "./layout/block-header";
 
 @import "./pages/home";
-@import "./layout/block-header";
+@import "./pages/food-info.scss";
