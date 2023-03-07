@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS_Code</title>
+    <link rel="stylesheet" href="./scss/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+</head>
+<body>
+    <header class="header bg--dark">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="branding d--flex">
+                    <img src="./image/image.png" alt="">
+                    <h3>Visual Studio Code</h3>
+                    <div class="header__navD">
+                        <ul>
+                            <li><a href="">Docs</a></li>
+                            <li><a href="">Updates</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Api</a></li>
+                            <li><a href="">Extensions</a></li>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Learn</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header__actions">
+                    
+                    <div class="header__navM">
+                        <ul>
+                            <li><a href="">Docs</a></li>
+                            <li><a href="">Updates</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Api</a></li>
+                            <li><a href="">Extensions</a></li>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Learn</a></li>
+                            <li><a href="">Search</a></li>
+                            <li><i class="fa-solid fa-download"></i><a href="">Download</a></li>
+                        </ul>    
+                    </div>    
+
+                    <div class="header__access">
+                        <input type="text" placeholder="Search">
+                        <li><i class="fa-solid fa-download"></i><a href="">Download</a></li>
+
+                    </div> 
+
+                    <div class="toggle__menu"> 
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div> 
+                </div>            
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container">
+            <h6> <a href="">Version 1.76</a> is now available! Read about the new features and fixes from February.</h6>
+            <div class="banner__wrapper">
+                <div class="banner__content">
+                    <h1>Code editing <span>Redefined</span> </h1>
+                    <h5>Free. Built on open source. Runs Everywhere.</h5>
+                    <div class="banner__dropdown">
+                        <button>Download for Windows <br><small>Stable Build</small></button>
+                        <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                    </div>
+                    <h6>
+                        <a href="#">Web</a>, 
+                        <a href="#">Insiders edition</a>, or
+                        <a href="#">other platforms</a>
+                    </h6>
+                    <small>By using VS Code, you agree to its <br><a href="#">liscense and privacy statement</a></small>
+                </div>
+
+                <div class="banner__image">
+                    <img src="./image/home-screenshot-win.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const bigImage = document.querySelector('.info__image__lg img');
+        const title = document.querySelector('h1');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('mouseenter', () =>{
+                const currentThumbnail = thumbnail.querySelector('img').getAttribute('src');
+                const currentTitle = thumbnail.querySelector('h3').innerText;
+                title.innerText = currentTitle;
+                bigImage.setAttribute('src', currentThumbnail);
+            }) 
+        })
+        var slider = tns({
+            container: '.related__foods__wrapper',
+            items: 6,
+            mouseDrag:true,
+            controlsText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                230: {
+                    items:2,
+                },
+                501: {
+                    items:6,
+                }
+            }
+        });
+    </script>
+
+<script src="./script.js"></script>
+</body>
+</html>
