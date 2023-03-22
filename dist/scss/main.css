@@ -495,9 +495,11 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 
 .header {
+  position: relative;
   position: fixed;
   padding: 1rem;
   width: 100%;
+  z-index: 99999;
 }
 .header__wrapper {
   display: flex;
@@ -595,9 +597,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   margin: 0.5rem 0;
 }
 @media screen and (min-width: 1020px) {
-  .header {
-    position: fixed;
-  }
   .header .toggle__menu {
     display: none;
   }
@@ -657,8 +656,110 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   .header__navD ul li a {
     color: gray;
   }
+  .header__navD ul li a:hover {
+    color: #ffffff;
+  }
   .header__navD ul li:hover {
     background: none;
+  }
+}
+
+.header.shadowB {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.footer {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  padding: 2.5rem 0;
+}
+.footer a {
+  color: #ffffff;
+}
+.footer a:hover {
+  color: #bc8ef1;
+}
+.footer__follow {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  padding: 0 4.5rem;
+}
+.footer__follow h3 {
+  display: none;
+}
+.footer__follow ul {
+  display: flex;
+  gap: 1rem;
+}
+.footer__follow ul a {
+  padding: 0.2rem;
+  background-color: #ffffff;
+  color: #2d2d2d;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+.footer__follow ul a:hover {
+  color: #0066b8;
+}
+.footer__follow ul li {
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+.footer__follow ul li a {
+  color: #2d2d2d;
+}
+.footer__follow ul li a:hover {
+  color: #444;
+  background-color: #e1e1e1;
+}
+.footer__follow ul li i {
+  margin-right: 0.5rem;
+  color: #2d2d2d;
+}
+.footer__follow ul li:hover {
+  background-color: #e1e1e1;
+}
+.footer__click {
+  display: flex;
+  margin: 0 3rem;
+}
+.footer__click ul {
+  display: flex;
+  gap: 1rem;
+}
+.footer__click ul img {
+  height: 2rem;
+}
+.footer__click ul a {
+  font-size: 1.2rem;
+}
+.footer__click ul a:hover {
+  color: #bc8ef1;
+}
+.footer__click ul li {
+  margin-left: 1.5rem;
+}
+@media screen and (min-width: 1020px) {
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__wrapper h3 {
+    display: contents;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__wrapper h3 {
+    display: contents;
+    font-weight: 400;
   }
 }
 
@@ -685,7 +786,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   color: #ffffff;
   display: flex;
   text-align: center;
+  padding-top: 6rem;
   align-items: center;
+  width: 100%;
 }
 .banner__wrapper {
   margin-top: 15rem;
@@ -702,9 +805,11 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   color: #0066b8;
 }
 .banner__dropdown {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  text-align: center;
   margin-left: 11rem;
   margin-bottom: 2rem;
   margin-top: 1rem;
@@ -716,6 +821,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   font-weight: 500;
   background-color: #0066b8;
 }
+.banner__dropdown button:hover {
+  background-color: #004a85;
+}
 .banner__dropdown button small {
   font-size: 11.9px;
   font-weight: 300;
@@ -723,11 +831,15 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .banner__dropdown ul {
   background-color: #0066b8;
 }
+.banner__dropdown ul:hover {
+  background-color: #004a85;
+}
 .banner__dropdown ul i {
   text-align: center;
   margin: 2.3rem 1rem;
 }
 .banner__content {
+  text-align: center;
   margin-top: -15rem;
 }
 .banner__content h1 {
@@ -844,20 +956,25 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     justify-content: space-evenly;
   }
 }
+@media screen and (min-width: 770px) {
+  .props__wrapper ul {
+    display: flex;
+    margin: 1rem;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
 
 .tweets {
   padding: 2rem;
-}
-.tweets__wrapper {
-  padding: 0.8rem 1.5rem;
 }
 .tweets__cards {
   display: flex;
   gap: 1rem;
 }
 .tweets__cards img {
-  width: 10rem;
-  height: 10rem;
+  width: 5rem;
+  height: 5rem;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center center;
@@ -887,6 +1004,32 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .tweets__cards .tweets__content p {
   font-size: 1.5rem;
 }
+.tweets__group {
+  padding: 3rem;
+}
+.tweets .tns-outer {
+  position: relative;
+}
+.tweets .tns-controls {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+.tweets .tns-controls button {
+  border: none;
+  font-size: 2rem;
+}
+@media screen and (min-width: 1020px) {
+  .tweets {
+    display: flex;
+  }
+  .tweets__group {
+    padding: 3rem;
+  }
+}
 
 .features {
   text-align: center;
@@ -897,7 +1040,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   padding: 5rem 1.5rem;
 }
 .features__cards:nth-child(4) img:hover {
-  transform: translate(1.04);
+  transform: scale(1.04);
   transition: 0.5s ease;
   cursor: pointer;
 }
@@ -992,8 +1135,11 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .languages__info a {
   color: #0066b8;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+}
+.languages__info a:hover {
   border-bottom: 1px solid #00589f;
+  color: #004a85;
 }
 .languages__click button {
   cursor: pointer;
@@ -1055,7 +1201,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .download__logoW {
   text-align: center;
-  padding: 3rem;
+  padding: 1rem 3rem;
 }
 .download__logoW img {
   width: 40%;
@@ -1081,10 +1227,12 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   justify-content: center;
 }
 .download__directW table {
+  margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
   text-align: center;
   width: 100%;
-  max-width: 30rem;
+  max-width: 25rem;
   border-collapse: separate;
   border-spacing: 0.5rem;
 }
@@ -1094,7 +1242,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .download__directW table td:first-child {
   font-size: 1.6rem;
   font-weight: 600;
-  text-align: center;
+  max-width: auto;
 }
 .download__directW table td:nth-child(even) {
   color: #ffffff;
@@ -1121,7 +1269,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .download__logoL {
   text-align: center;
-  padding: 3rem;
+  padding: 1rem 3rem;
 }
 .download__logoL img {
   width: 40%;
@@ -1151,10 +1299,12 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   justify-content: center;
 }
 .download__directL table {
+  margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
   text-align: center;
   width: 100%;
-  max-width: 30rem;
+  max-width: 25rem;
   border-collapse: separate;
   border-spacing: 0.5rem;
 }
@@ -1195,7 +1345,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .download__logoM img {
   width: 40%;
-  padding: 1rem;
+  padding: 1rem 3rem;
 }
 .download__logoM button {
   cursor: pointer;
@@ -1217,10 +1367,12 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   justify-content: center;
 }
 .download__directM table {
+  margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
   text-align: center;
   width: 100%;
-  max-width: 30rem;
+  max-width: 25rem;
   border-collapse: separate;
   border-spacing: 0.5rem;
   border-radius: 1rem;
@@ -1296,8 +1448,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     text-align: center;
   }
   .download__logoM img {
-    width: 10rem;
-    margin: 0.1rem 0;
+    width: 13rem;
+    margin-top: -1rem;
+    padding-bottom: 1.5rem;
   }
   .download__logoM button {
     cursor: pointer;
@@ -1305,6 +1458,13 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     font-size: 2rem;
     font-weight: 600;
     width: 30rem;
+    padding: 1rem 6rem;
+  }
+}
+@media screen and (min-width: 770px) {
+  .download {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -1314,4 +1474,79 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .insiders__wrapper {
   text-align: center;
+}
+.insiders__content {
+  color: #444;
+}
+.insiders__content h2 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+}
+.insiders__content h2 a {
+  color: #0066b8;
+}
+.insiders__content h2 a:hover {
+  border-bottom: 1px solid #0066b8;
+}
+.insiders__content p {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.insiders__content p a {
+  color: #0066b8;
+}
+.insiders__content p a:hover {
+  border-bottom: 1px solid #0066b8;
+}
+.insiders__content__item2 {
+  padding: 4rem 3rem;
+}
+.insiders__content__item1 {
+  padding: 4rem 3rem;
+}
+.insiders__license {
+  padding: 4rem 3rem;
+  color: #6c6c6c;
+  line-height: 4rem;
+}
+.insiders__license h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.insiders__license p {
+  font-size: 1.4rem;
+}
+.insiders__license p a {
+  color: #0066b8;
+}
+.insiders__license p a:hover {
+  border-bottom: 1px solid #0066b8;
+}
+@media screen and (min-width: 1020px) {
+  .insiders__wrapper {
+    padding: 0 10rem;
+  }
+  .insiders__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .insiders__license {
+    padding: 0 15rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .insiders__wrapper {
+    padding: 0 10rem;
+  }
+  .insiders__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .insiders__license {
+    padding: 0 15rem;
+  }
 }/*# sourceMappingURL=main.css.map */
